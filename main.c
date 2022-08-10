@@ -7,6 +7,7 @@
 
 
 #include "fetch.h"
+#include "logos.h"
 
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_GREEN   "\x1b[32m"
@@ -18,6 +19,13 @@
 
 
 int main() {
+
+
+
+
+
+
+    printf("%s",logoOldarch());
 
     printf( ANSI_COLOR_CYAN "OS:%s" ANSI_COLOR_RESET, get_distro_name());
 
