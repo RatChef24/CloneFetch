@@ -21,29 +21,33 @@
 int main() {
 
 
+    char *ar = {"|||||||||||||",
+                "|||||||||||||",
+                "|||||||||||||",
+                "1234567"
+                };
 
 
 
 
-    printf("%s",logoOldarch());
 
-    printf( ANSI_COLOR_CYAN "OS:%s" ANSI_COLOR_RESET, get_distro_name());
+    printf( ANSI_COLOR_CYAN "                                              OS:%s", get_distro_name());
 
-    printf( "CPU: %s",get_cpu_name());
+    printf( "                                              CPU: %s" ,get_cpu_name());
 
-    printf("Kernel: %s" ,get_kernel_version());
+    printf("                                              Kernel: %s",get_kernel_version());
 
-    printf("Uptime: %s" ,get_uptime());
+    printf("                                              Uptime: %s" ,get_uptime());
 
-    printf("Shell: %s" ,get_shell_version());
+    printf("                                              Shell: %s" ,get_shell_version());
 
-    printf("Resolution: %s" ,screen_resolution());
+    printf("                                              Resolution: %s" ,screen_resolution());
 
-    printf("Disk Usage: %s" ,get_disk_usage());
+    printf("                                              Disk Usage: %s" ,get_disk_usage());
 
-    printf("GPU: %s" ,get_gpu_name());
+    printf("                                              GPU: %s" ,get_gpu_name());
 
-    printf("RAM: %s" ,get_ram_usage());
+    printf("                                              RAM: %s" ,get_ram_usage());
 
     return 0;
 
