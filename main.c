@@ -4,10 +4,12 @@
 #include <sys/syscall.h>
 #include <sys/types.h>
 #include <sys/statvfs.h>
+#include <string.h>
 
 
 #include "fetch.h"
 #include "logos.h"
+#include "util.h"
 
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_GREEN   "\x1b[32m"
@@ -21,33 +23,34 @@
 int main() {
 
 
-    char *ar = {"|||||||||||||",
-                "|||||||||||||",
-                "|||||||||||||",
-                "1234567"
-                };
+    char *archOld =   "               ___=(SDGJT=_                  \n              _GTDJHGGFCVS)                \n              ,GTDJGGDTDFBGX0               \n              JDJDIJHRORVFSBSVL\"  \"-=+=,_     \n             IJFDUFHJNXIXCDXDSV\"  \"  \"DEBL    \n              [LKDSDJTDU=OUSCSBFLD\"  \"   '?ZWX,   \n              ,LMDSDSWH'     `DCBOSI\"  \"     DRDS\],    \n              SDDFDFH'         !YEWD,\"  \"   )HDROD     \n              !KMDOCG            &GSU|\"  \"_GFHRGO\'   \n              HKLSGP'\"  \"           __\"  \"TKM0\"  \"GHRBV)\'   \n              JSNRVW'\"  \"       __+MNAEC\"  \"IOI,\"  \"BN\'       \n              HELK['\"  \"    __,=OFFXCBGHC\"  \"FD)          \n              ?KGHE \"  \"_-#DASDFLSV=\'\"  \"    \'EF          \n              'EHTI                    !H         \n              \`0F\'                    \'!         \n\n\n";
+
+    //print logo array
+    printf("%s", archOld);
 
 
 
 
 
-    printf( ANSI_COLOR_CYAN "                                              OS:%s", get_distro_name());
 
-    printf( "                                              CPU: %s" ,get_cpu_name());
 
-    printf("                                              Kernel: %s",get_kernel_version());
+    printf( ANSI_COLOR_CYAN"OS:%s", get_distro_name());
 
-    printf("                                              Uptime: %s" ,get_uptime());
+    printf( "CPU: %s" ,get_cpu_name());
 
-    printf("                                              Shell: %s" ,get_shell_version());
+    printf("Kernel: %s",get_kernel_version());
 
-    printf("                                              Resolution: %s" ,screen_resolution());
+    printf("Uptime: %s" ,get_uptime());
 
-    printf("                                              Disk Usage: %s" ,get_disk_usage());
+    printf("Shell: %s" ,get_shell_version());
 
-    printf("                                              GPU: %s" ,get_gpu_name());
+    printf("Resolution: %s" ,screen_resolution());
 
-    printf("                                              RAM: %s" ,get_ram_usage());
+    printf("Disk Usage: %s" ,get_disk_usage());
+
+    printf("GPU: %s" ,get_gpu_name());
+
+    printf("RAM: %s" ,get_ram_usage());
 
     return 0;
 

@@ -67,6 +67,12 @@ build CMakeFiles/untitled.dir/logos.c.o: C_COMPILER__untitled_Debug /home/ratche
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir
 
+build CMakeFiles/untitled.dir/util.c.o: C_COMPILER__untitled_Debug /home/ratchef/CLionProjects/untitled/util.c || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles/untitled.dir/util.c.o.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles/untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target untitled
@@ -75,7 +81,7 @@ build CMakeFiles/untitled.dir/logos.c.o: C_COMPILER__untitled_Debug /home/ratche
 #############################################
 # Link the executable untitled
 
-build untitled: C_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.c.o CMakeFiles/untitled.dir/fetch.c.o CMakeFiles/untitled.dir/logos.c.o
+build untitled: C_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.c.o CMakeFiles/untitled.dir/fetch.c.o CMakeFiles/untitled.dir/logos.c.o CMakeFiles/untitled.dir/util.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/untitled.dir
   POST_BUILD = :
