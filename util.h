@@ -7,4 +7,3 @@
 
 #endif //UNTITLED_UTIL_H
 
-void process_logo_only(char *distro[], unsigned short int num);

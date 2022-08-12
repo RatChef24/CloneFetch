@@ -19,7 +19,7 @@
 #define TLPR "\x1B[1;35m" /* light purple */
 #define TLCY "\x1B[1;36m" /* light cyan */
 #define TWHT "\x1B[1;37m" /* white */
-
+#include <stdio.h>
 
 char *logoOldarch(){
     char *logo = { "              __                     " ,
@@ -82,7 +82,15 @@ char *arch_logo[] = {"" TLCY "                   -`                 " TNRM,
                      "" TCYN " `++:.                           `-/+/" TNRM,
                      "" TCYN " .`                                 `/" TNRM};
 
+
 /* 18 */
+
+void printArchLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", arch_logo[i]);
+    }
+}
 char *mint_logo[] = {"                                       " TNRM,
                      TLGN " MMMMMMMMMMMMMMMMMMMMMMMMMmds+.       " TNRM,
                      TLGN " MMm----::-://////////////oymNMd+`    " TNRM,
@@ -103,6 +111,12 @@ char *mint_logo[] = {"                                       " TNRM,
                      "                                      " TNRM};
 
 /* 18 */
+void printMintLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", mint_logo[i]);
+    }
+}
 char *lmde_logo[] = {"          " TWHT "`.-::---..            " TNRM,
                      TLGN "       .:++++ooooosssoo:.      " TNRM,
                      TLGN "     .+o++::.      `.:oos+.    " TNRM,
@@ -124,6 +138,12 @@ char *lmde_logo[] = {"          " TWHT "`.-::---..            " TNRM,
                      "                               " TNRM};
 
 /* 18 */
+void printLmdeLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", lmde_logo[i]);
+    }
+}
 char *ubuntu_logo[] = {TLRD "                          ./+o+-      " TNRM,
                        TWHT "                  yyyyy- " TLRD "-yyyyyy+     " TNRM,
                        TWHT "               " TWHT "://+//////" TLRD "-yyyyyyo     " TNRM,
@@ -144,6 +164,12 @@ char *ubuntu_logo[] = {TLRD "                          ./+o+-      " TNRM,
                        TYLW "                          `oo++.      " TNRM};
 
 /* 18 */
+void printUbuntuLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", ubuntu_logo[i]);
+    }
+}
 char *debian_logo[] = {"  " TWHT "       _,met$$$$$gg.           " TNRM,
                        "  " TWHT "    ,g$$$$$$$$$$$$$$$P.       " TNRM,
                        "  " TWHT "  ,g$$P\"\"       \"\"\"Y$$.\".     " TNRM,
@@ -164,6 +190,12 @@ char *debian_logo[] = {"  " TWHT "       _,met$$$$$gg.           " TNRM,
                        "                                " TNRM};
 
 /* 18 */
+void printDebianLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", debian_logo[i]);
+    }
+}
 char *crunchbang_logo[] = {"                                       " TNRM "",
                            "         " TWHT "███        " TWHT "███          " TWHT "███  " TNRM "",
                            "         " TWHT "███        " TWHT "███          " TWHT "███  " TNRM "",
@@ -184,6 +216,13 @@ char *crunchbang_logo[] = {"                                       " TNRM "",
                            "                                      " TNRM ""};
 
 /* 18 */
+void printCrunchbangLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", crunchbang_logo[i]);
+    }
+}
+
 char *gentoo_logo[] = {
         TLPR "         -/oyddmdhs+:.                " TNRM,
         TLPR "     -o" TWHT "dNMMMMMMMMNNmhy+" TLPR "-`            " TNRM,
@@ -205,6 +244,13 @@ char *gentoo_logo[] = {
         TLPR "  `-//////:--.                       " TNRM};
 
 /* 18 */
+void printGentooLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", gentoo_logo[i]);
+    }
+}
+
 char *funtoo_logo[] = {
         "                                                     " TNRM,
         "                                                    " TNRM,
@@ -235,6 +281,13 @@ char *funtoo_logo[] = {
         "                                                    " TNRM};
 
 /* 18 */
+void printFuntooLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", funtoo_logo[i]);
+    }
+}
+
 char *fedora_logo[] = {TLBL "           :/------------://          " TNRM,
                        TLBL "        :------------------://       " TNRM,
                        TLBL "      :-----------" TWHT "/shhdhyo/" TLBL "-://      " TNRM,
@@ -255,6 +308,13 @@ char *fedora_logo[] = {TLBL "           :/------------://          " TNRM,
                        "                                     " TNRM};
 
 /* 18 */
+void printFedoraLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", fedora_logo[i]);
+    }
+}
+
 char *freebsd_logo[] = {"                                     " TNRM,
                         "   " TWHT "```                        " TLRD "`      " TNRM,
                         "  " TWHT "` `.....---..." TLRD "....--.```   -/      " TNRM,
@@ -275,6 +335,13 @@ char *freebsd_logo[] = {"                                     " TNRM,
                         "                                     " TNRM};
 
 /* 23 */
+void printFreebsdLogo(){
+    int i;
+    for(i = 0; i < 23; i++){
+        printf("%s\n", freebsd_logo[i]);
+    }
+}
+
 char *openbsd_logo[] = {
         "                                       " TLCY " _  " TNRM "",
         "                                       " TLCY "(_) " TNRM "",
@@ -303,6 +370,13 @@ char *openbsd_logo[] = {
         TYLW "       `.\\                                  " TNRM ""};
 
 /* 18 */
+void printOpenbsdLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", openbsd_logo[i]);
+    }
+}
+
 char *dragonflybsd_logo[] = {
         "                     " TLRD " |                    " TNRM,
         "                    " TLRD " .-.                   " TNRM,
@@ -324,6 +398,12 @@ char *dragonflybsd_logo[] = {
         "                   " TLRD "   ^                    " TNRM};
 
 /* 20 */
+void printDragonflybsdLogo(){
+    int i;
+    for(i = 0; i < 20; i++){
+        printf("%s\n", dragonflybsd_logo[i]);
+    }
+}
 char *netbsd_logo[] = {
         "                                  " TLRD "__,gnnnOCCCCCOObaau,_      " TNRM,
         "   " TWHT "_._                    " TLRD "__,gnnCCCCCCCCOPF\"''               " TNRM,
@@ -347,6 +427,12 @@ char *netbsd_logo[] = {
         "                   " TWHT "\\\\NNNA" TNRM};
 
 /* 18 */
+void printNetbsdLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", netbsd_logo[i]);
+    }
+}
 char *mandriva_mandrake_logo[] = {"                                          " TNRM,
                                   TYLW "                         ``              " TNRM,
                                   TYLW "                        `-.              " TNRM,
@@ -368,6 +454,12 @@ char *mandriva_mandrake_logo[] = {"                                          " T
                                   "                                         " TNRM};
 
 /* 18 */
+void printMandrivaMandrakeLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", mandriva_mandrake_logo[i]);
+    }
+}
 char *opensuse_logo[] = {
         TWHT "             .;ldkO0000Okdl;.            " TNRM,
         TWHT "         .;d00xl:,'....';:ok00d;.        " TNRM,
@@ -389,6 +481,12 @@ char *opensuse_logo[] = {
         TWHT "              .':ldxkkkkxdl:'.           " TNRM};
 
 /* 21 */
+void printOpensuseLogo(){
+    int i;
+    for(i = 0; i < 21; i++){
+        printf("%s\n", opensuse_logo[i]);
+    }
+}
 char *slackware_logo[] = {
         TLBL "                   :::::::",
         TLBL "             :::::::::::::::::::               " TNRM,
@@ -413,6 +511,12 @@ char *slackware_logo[] = {
         TLBL "                 ::::::::::::" TNRM};
 
 /* 18 */
+void printSlackwareLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", slackware_logo[i]);
+    }
+}
 char *redhat_logo[] = {"                                           " TNRM,
                        TLRD "              `.-..........`              " TNRM,
                        TLRD "             `////////::.`-/.             " TNRM,
@@ -433,6 +537,12 @@ char *redhat_logo[] = {"                                           " TNRM,
                        "                                          " TNRM};
 
 /* 23 */
+void printRedhatLogo(){
+    int i;
+    for(i = 0; i < 23; i++){
+        printf("%s\n", redhat_logo[i]);
+    }
+}
 char *frugalware_logo[] = {
         TLBL "          `++/::-.`                               " TNRM,
         TLBL "         /o+++++++++/::-.`                        " TNRM,
@@ -459,6 +569,12 @@ char *frugalware_logo[] = {
         TLBL "                                .-:+++`" TNRM};
 
 /* 19 */
+void printFrugalwareLogo(){
+    int i;
+    for(i = 0; i < 19; i++){
+        printf("%s\n", frugalware_logo[i]);
+    }
+}
 char *peppermint_logo[] = {
         TLRD "             8ZZZZZZ" TWHT "MMMMM               " TNRM,
         TLRD "          .ZZZZZZZZZ" TWHT "MMMMMMM.           " TNRM,
@@ -481,6 +597,12 @@ char *peppermint_logo[] = {
         TLRD "              ZZZZZZZZZ" TWHT "MM" TNRM};
 
 /* 18 */
+void printPeppermintLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", peppermint_logo[i]);
+    }
+}
 char *solusos_logo[] = {TWHT "               e         e      " TNRM,
                         TWHT "             eee       ee      " TNRM,
                         TWHT "            eeee     eee       " TNRM,
@@ -501,6 +623,12 @@ char *solusos_logo[] = {TWHT "               e         e      " TNRM,
                         TDGY "         ww                    " TNRM};
 
 /* 18 */
+void printSolusOSLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", solusos_logo[i]);
+    }
+}
 char *mageia_logo[] = {TLCY "               .°°.               " TNRM,
                        TLCY "                °°   .°°.        " TNRM,
                        TLCY "                .°°°. °°         " TNRM,
@@ -522,6 +650,12 @@ char *mageia_logo[] = {TLCY "               .°°.               " TNRM,
                        TWHT "               .,KKKK,.            " TNRM};
 
 /* 18 */
+void printMageiaLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", mageia_logo[i]);
+    }
+}
 char *parabolagnu_linuxlibre_logo[] = {
         "                                  " TNRM,
         TLPR "              eeeeeeeee          " TNRM,
@@ -543,6 +677,12 @@ char *parabolagnu_linuxlibre_logo[] = {
         TLPR "          e                      " TNRM};
 
 /* 18 */
+void printParabolaGNULinuxLibreLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", parabolagnu_linuxlibre_logo[i]);
+    }
+}
 char *viperr_logo[] = {
         TWHT "    wwzapd         dlzazw       " TNRM,
         TWHT "   an" TDGY "#" TWHT "zncmqzepweeirzpas" TDGY "#" TWHT "xz     " TNRM,
@@ -564,6 +704,12 @@ char *viperr_logo[] = {
         "                               " TNRM};
 
 /* 18 */
+void printViperrLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", viperr_logo[i]);
+    }
+}
 char *linuxdeepin_logo[] = {
         TLGN "  eeeeeeeeeeeeeeeeeeeeeeeeeeee    " TNRM, TLGN " eee  eeeeeee          eeeeeeee  " TNRM,
         TLGN "ee   eeeeeeeee      eeeeeeeee ee " TNRM,  TLGN "e   eeeeeeeee     eeeeeeeee    e " TNRM,
@@ -577,6 +723,12 @@ char *linuxdeepin_logo[] = {
         "                                 " TNRM};
 
 /* 18 */
+void printLinuxDeepinLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", linuxdeepin_logo[i]);
+    }
+}
 char *chakra_logo[] = {TLBL "      _ _ _        \"kkkkkkkk.          " TNRM,
                        TLBL "    ,kkkkkkkk.,    \'kkkkkkkkk,        " TNRM,
                        TLBL "    ,kkkkkkkkkkkk., \'kkkkkkkkk.       " TNRM,
@@ -597,6 +749,12 @@ char *chakra_logo[] = {TLBL "      _ _ _        \"kkkkkkkk.          " TNRM,
                        TLBL "                   \"\'\'\"               " TNRM};
 
 /* 21 */
+void printChakraLogo(){
+    int i;
+    for(i = 0; i < 21; i++){
+        printf("%s\n", chakra_logo[i]);
+    }
+}
 char *fuduntu_logo[] = {TDGY "       `dwoapfjsod`" TYLW "           `dwoapfjsod`       " TNRM,
                         TDGY "    `xdwdsfasdfjaapz`" TYLW "       `dwdsfasdfjaapzx`    " TNRM,
                         TDGY "  `wadladfladlafsozmm`" TYLW "     `wadladfladlafsozmm`  " TNRM,
@@ -620,6 +778,12 @@ char *fuduntu_logo[] = {TDGY "       `dwoapfjsod`" TYLW "           `dwoapfjsod`
                         TLRD "        `woapfjsod`" TWHT "             `woapfjsod`" TNRM};
 
 /* 16 */
+void printFuduntuLogo(){
+    int i;
+    for(i = 0; i < 16; i++){
+        printf("%s\n", fuduntu_logo[i]);
+    }
+}
 char *macosx_logo[] = {
         "                               ",
         TGRN "                 -/+:.         " TNRM,
@@ -641,6 +805,12 @@ char *macosx_logo[] = {
 };
 
 /* 16 */
+void printMacOSXLogo(){
+    int i;
+    for(i = 0; i < 16; i++){
+        printf("%s\n", macosx_logo[i]);
+    }
+}
 char *windows_logo[] = {TLRD "        ,.=:!!t3Z3z.,                " TNRM,
                         TLRD "       :tt:::tt333EE3                " TNRM,
                         TLRD "       Et:::ztt33EEEL" TLGN " @Ee.,      .., " TNRM,
@@ -659,6 +829,12 @@ char *windows_logo[] = {TLRD "        ,.=:!!t3Z3z.,                " TNRM,
                         TYLW "                 \"VEzjt:;;z>*`       " TNRM};
 
 /* 19 */
+void printWindowsLogo(){
+    int i;
+    for(i = 0; i < 19; i++){
+        printf("%s\n", windows_logo[i]);
+    }
+}
 char *windows_modern_logo[] = {TLBL "                                  .., " TNRM,
                                TLBL "                      ....,,:;+ccllll " TNRM,
                                TLBL "        ...,,+:;  cllllllllllllllllll " TNRM,
@@ -680,6 +856,12 @@ char *windows_modern_logo[] = {TLBL "                                  .., " TNR
                                TLBL "                                   `` " TNRM};
 
 /* 18 */
+void printWindowsModernLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", windows_modern_logo[i]);
+    }
+}
 char *trisquel_logo[] = {TLBL "                          ▄▄▄▄▄▄       " TNRM,
                          TLBL "                       ▄█████████▄    " TNRM,
                          TLBL "       ▄▄▄▄▄▄         ████▀   ▀████   " TNRM,
@@ -700,6 +882,12 @@ char *trisquel_logo[] = {TLBL "                          ▄▄▄▄▄▄     
                          TLCY "                      ▀▀█████▀▀       " TNRM};
 
 /* 18 */
+void printTrisquelLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", trisquel_logo[i]);
+    }
+}
 char *manjaro_logo[] = {
         TLGN " ██████████████████  ████████    " TNRM, TLGN " ██████████████████  ████████    " TNRM,
         TLGN " ██████████████████  ████████    " TNRM, TLGN " ██████████████████  ████████    " TNRM,
@@ -712,6 +900,12 @@ char *manjaro_logo[] = {
         TLGN " ████████  ████████  ████████    " TNRM, "                                 " TNRM};
 
 /* 18 */
+void printManjaroLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", manjaro_logo[i]);
+    }
+}
 char *elementaryos_logo[] = {
         "                                  ",          TWHT "           $?77777$$$IO          " TNRM,
         TWHT "        $III777ZZZZ$$$ZZ$8       " TNRM, TWHT "      ZI777           OZZZ$      " TNRM,
@@ -724,6 +918,12 @@ char *elementaryos_logo[] = {
         "                                 " TNRM,      "                                 " TNRM};
 
 /* 20 */
+void printElementaryOSLogo(){
+    int i;
+    for(i = 0; i < 20; i++){
+        printf("%s\n", elementaryos_logo[i]);
+    }
+}
 char *scientificlinux_logo[] = {
         TLBL "                  =/;;/-                    " TNRM,
         TLBL "                 +:    //                   " TNRM,
@@ -747,6 +947,12 @@ char *scientificlinux_logo[] = {
         TLBL "                  '////'" TNRM};
 
 /* 20 */
+void printScientificLinuxLogo(){
+    int i;
+    for(i = 0; i < 20; i++){
+        printf("%s\n", scientificlinux_logo[i]);
+    }
+}
 char *backtracklinux_logo[] = {TWHT "..............					" TNRM,
                                TWHT "            ..,;:ccc,.                          " TNRM,
                                TWHT "          ......''';lxO.                        " TNRM,
@@ -771,6 +977,12 @@ char *backtracklinux_logo[] = {TWHT "..............					" TNRM,
                                TWHT "                                             .  " TNRM};
 
 /* 20 */
+void printBacktrackLinuxLogo(){
+    int i;
+    for(i = 0; i < 20; i++){
+        printf("%s\n", backtracklinux_logo[i]);
+    }
+}
 char *kalilinux_logo[] = {TLBL "..............					" TNRM,
                           TLBL "            ..,;:ccc,.                          " TNRM,
                           TLBL "          ......''';lxO.                        " TNRM,
@@ -795,6 +1007,12 @@ char *kalilinux_logo[] = {TLBL "..............					" TNRM,
                           TLBL "                                             .  " TNRM};
 
 /* 18 */
+void printKalilinuxLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", kalilinux_logo[i]);
+    }
+}
 char *sabayon_logo[] = {TLBL "            ...........                " TNRM,
                         TLBL "         ..             ..            " TNRM,
                         TLBL "      ..                   ..         " TNRM,
@@ -815,6 +1033,12 @@ char *sabayon_logo[] = {TLBL "            ...........                " TNRM,
                         TLBL "          ...............             " TNRM};
 
 /* 16 */
+void printSabayonLogo(){
+    int i;
+    for(i = 0; i < 16; i++){
+        printf("%s\n", sabayon_logo[i]);
+    }
+}
 char *android_logo[] = {
         TLGN "      ▀▄  ▂▂▂▂▂  ▄▀      " TNRM, TLGN "      ▗▟█████████▙▖      " TNRM,
         TLGN "     ▟██▀▀█████▀▀██▙     " TNRM, TLGN "     ███▄▄█████▄▄███▌    " TNRM,
@@ -826,6 +1050,12 @@ char *android_logo[] = {
         TLGN "      ████     ████      " TNRM, TLGN "      ▜██▛     ▜██▛      " TNRM};
 
 /* 18 */
+void printAndroidLogo(){
+    int i;
+    for(i = 0; i < 18; i++){
+        printf("%s\n", android_logo[i]);
+    }
+}
 char *linux_logo[] = {"                            " TNRM,
                       "                            " TNRM,
                       "                            " TNRM,
@@ -846,6 +1076,12 @@ char *linux_logo[] = {"                            " TNRM,
                       "                            " TNRM};
 
 /* 17 */
+void printLinuxLogo(){
+    int i;
+    for(i = 0; i < 17; i++){
+        printf("%s\n", linux_logo[i]);
+    }
+}
 char *solaris_logo[] = {
         TBLU "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM" TNRM,
         TBLU "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM" TWHT "██" TBLU "MMMM$MMMMMMMMMMMM" TNRM,
@@ -881,6 +1117,12 @@ char *solaris_logo[] = {
         "MM" TNRM};
 
 /* 16 */
+void printSolarisLogo(){
+    int i;
+    for(i = 0; i < 16; i++){
+        printf("%s\n", solaris_logo[i]);
+    }
+}
 char *angstrom_logo[] = {"						    ",
                          "						    ",
                          "						    ",
@@ -897,3 +1139,10 @@ char *angstrom_logo[] = {"						    ",
                          "						    ",
                          "						    ",
                          "						    "};
+
+void printAngstromLogo(){
+    int i;
+    for(i = 0; i < 16; i++){
+        printf("%s\n", angstrom_logo[i]);
+    }
+}

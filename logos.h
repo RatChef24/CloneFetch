@@ -13,7 +13,49 @@
 #ifndef SCREENFETCH_C_LOGOS_H
 #define SCREENFETCH_C_LOGOS_H
 
-char *logoOldarch();
+void printArchLogo();
+void printMintLogo();
+void printUbuntuLogo();
+void printWindowsLogo();
+void printLinuxLogo();
+void printAndroidLogo();
+void printLmdeLogo();
+void printUbuntuLogo();
+void printDebianLogo();
+void printCrunchbangLogo();
+void printKalilinuxLogo();
+void printGentooLogo();
+void printFuntooLogo();
+void printFedoraLogo();
+void printFreebsdLogo();
+void printOpenbsdLogo();
+void printDragonflybsdLogo();
+void printNetbsdLogo();
+void printMandrivaMandrakeLogo();
+void printOpensuseLogo();
+void printSlackwareLogo();
+void printRedHatLogo();
+void printFrugalwareLogo();
+void printPeppermintLogo();
+void printSolusOsLogo();
+void printMageiaLogo();
+void printParabolaLogo();
+void printViperrLogo();
+void printLinuxDeepinLogo();
+void printChakraLogo();
+void printFuduntuLogo();
+void printMacOSXLogo();
+void printTrisquelLogo();
+void printManjaroLogo();
+void printElementaryLogo();
+void printScientificLinuxLogo();
+void printBacktrackLinuxLogo();
+void printSabayonLogo();
+void printAndroidLogo();
+void printLinuxLogo();
+void printSolarisLogo();
+void printAngstromLogo();
+
 extern char *oldarch_logo[];
 extern char *arch_logo[];
 extern char *mint_logo[];

@@ -29,7 +29,9 @@ int main() {
     printf("%s", archOld);
 
 
+    printArchLogo();
 
+    printMintLogo();
 
 
 
