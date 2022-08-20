@@ -4,7 +4,41 @@
 
 #include "util.h"
 #include <stdio.h>
+#include "fetch.h"
+#include "logos.h"
+#include "string.h"
+#include <stdlib.h>
+
+
+char str[];
 
 
 
-char *archOld =   "               ___=(SDGJT=_                  \n              _GTDJHGGFCVS)                \n              ,GTDJGGDTDFBGX0               \n              JDJDIJHRORVFSBSVL\"  \"-=+=,_     \n             IJFDUFHJNXIXCDXDSV\"  \"  \"DEBL    \n              [LKDSDJTDU=OUSCSBFLD\"  \"   '?ZWX,   \n              ,LMDSDSWH'     `DCBOSI\"  \"     DRDS\],    \n              SDDFDFH'         !YEWD,\"  \"   )HDROD     \n              !KMDOCG            &GSU|\"  \"_GFHRGO\'   \n              HKLSGP'\"  \"           __\"  \"TKM0\"  \"GHRBV)\'   \n              JSNRVW'\"  \"       __+MNAEC\"  \"IOI,\"  \"BN\'       \n              HELK['\"  \"    __,=OFFXCBGHC\"  \"FD)          \n              ?KGHE \"  \"_-#DASDFLSV=\'\"  \"    \'EF          \n              'EHTI                    !H         \n              \`0F\'                    \'!         \n\n\n";
+
+
+//prints the get distro name function
+
+void print_functions() {
+    strcpy(str, "get_distro_name");
+    if(strcmp(str, "EndeavourOS Linux")) {
+        printArchLogo();
+    } else if (strcmp(str, "Ubuntu Linux")) {
+        printUbuntuLogo();
+    } else if (strcmp(str, "Linux Mint")){
+        printMintLogo();
+        
+    }
+
+}
+
+
+//merge two char arrays
+char *merge_strings(char *a, char *b){
+    char *c = malloc(strlen(a) + strlen(b) + 1);
+    strcpy(c, a);
+    strcat(c, b);
+    return c;
+}
+
+//create an array that includes all the functions in fetch.h file and prints it
+

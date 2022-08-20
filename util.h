@@ -7,3 +7,6 @@
 
 #endif //UNTITLED_UTIL_H
 
+void computeDistro();
+void print_functions();
+char *arrayOfFunctions();
