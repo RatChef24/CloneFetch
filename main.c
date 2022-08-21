@@ -20,7 +20,13 @@
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
 
-int main() {
+int main(int argc, char *argv[]) {
+    //set a custom distro name as an argument
+    printf(argv[1]);
+    if(argc > 0) {
+        set_distro_name(argv[1]);
+
+    }
 
 
     //print the logo of the distro in use

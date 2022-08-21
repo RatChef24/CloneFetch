@@ -10,3 +10,4 @@
 void computeDistro();
 void print_functions();
 char *arrayOfFunctions();
+void set_distro_name(char *distro_name);

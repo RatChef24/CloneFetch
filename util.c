@@ -26,11 +26,16 @@ void print_functions() {
         printUbuntuLogo();
     } else if (strcmp(str, "Linux Mint")){
         printMintLogo();
-        
+
     }
 
 }
 
+
+//sets a custom distro name with an array as input
+void set_distro_name(char *distro_name) {
+    strcpy(str, distro_name);
+}
 
 //merge two char arrays
 char *merge_strings(char *a, char *b){
