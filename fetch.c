@@ -24,6 +24,7 @@ char *get_distro_name()
     return distro_name;
 }
 
+
 // detects the version of the kernel in use and returns it as a string
 char *get_kernel_version()
 {

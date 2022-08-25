@@ -8,7 +8,7 @@
 
 #include "fetch.h"
 
-void display_info(char *logo[])
+void display_info(char *logo[], char *arg)
 {
     printf("\n");
     printf("\n");
@@ -20,7 +20,7 @@ void display_info(char *logo[])
         {
             
             case 0:
-                printf("OS: %s", get_distro_name());
+                printf("OS: %s", arg);
                 break;
 
         case 1:
