@@ -58,9 +58,16 @@ int main(int argc, char *argv[])
 
     char **logo = NULL;
     char *arg = NULL;
+    char *arg2 = NULL;
 
-    if (argc > 1)
+    if (argc > 1){
         arg = argv[1];
+        arg2 = argv[2];
+
+
+    }
+
+
     else
         arg = get_distro_name();
         logo = get_logo(arg);
@@ -68,7 +75,18 @@ int main(int argc, char *argv[])
     if (logo == NULL)
         return 1;
 
+
+
+
+
+
     display_info(logo,arg);
 
     return 0;
-}
+    }
+
+
+
+
+
+

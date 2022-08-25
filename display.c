@@ -18,7 +18,8 @@ void display_info(char *logo[], char *arg)
 
         switch (i)
         {
-            
+
+
             case 0:
                 printf("OS: %s", arg);
                 break;
@@ -56,15 +57,19 @@ void display_info(char *logo[], char *arg)
             break;
 
         case 9:
-            printf("Hostname: %s", detect_user());
+            printf("Host: %s", get_host());
+            break;
+        case 10:
+            printf("User: %s", detect_user());
             break;
 
-            case 10:
-                printf("User: %s", detect_user());
-                break;
 
         }
 
         printf("\n");
     }
 }
+
+
+
+

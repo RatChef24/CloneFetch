@@ -125,7 +125,7 @@ char *get_gpu_name()
     {
         if (strstr(line, "VGA") != NULL)
         {
-            strcpy(gpu_name, line);
+            strcpy(gpu_name, line+8);
             break;
         }
     }
@@ -153,28 +153,7 @@ char *get_ram_usage() {
 }
 
 
-/*	detect_host
-  detects the computer's hostname and active user and formats them
-*/
-char *detect_host()
-{
-    char *hostname = (char *)malloc(sizeof(char) * 100);
-    FILE *fp = popen("/etc/hostname", "r");
-    char *line = NULL;
-    size_t len = 0;
-    ssize_t read;
-    while ((read = getline(&line, &len, fp)) != -1)
-    {
-        if (strstr(line, "hostname") != NULL)
-        {
-            strcpy(hostname, line);
-            break;
-        }
-    }
-    hostname[strcspn(hostname, "\r\n")] = 0;
-    pclose(fp);
-    return hostname;
-}
+
 
 //detect the active user and returns it as a string
 char *detect_user()
@@ -195,4 +174,27 @@ char *detect_user()
     user[strcspn(user, "\r\n")] = 0;
     pclose(fp);
     return user;
+}
+
+//get_hostname returns the hostname of the system and returns it as a string
+
+char *get_host(){
+    char *host = (char *)malloc(sizeof(char) * 100);
+    FILE *fp = popen("hostname", "r");
+    char *line = NULL;
+    size_t len = 0;
+    ssize_t read;
+    while ((read = getline(&line, &len, fp)) != -1)
+    {
+        if (strstr(line, "hostname") != NULL)
+        {
+            strcpy(host, line);
+            break;
+        }
+    }
+    host[strcspn(host, "\r\n")] = 0;
+    pclose(fp);
+    return host;
+
+
 }
