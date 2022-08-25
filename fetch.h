@@ -17,3 +17,6 @@ char *get_cpu_name();
 char *get_disk_usage();
 char *get_gpu_name();
 char *get_ram_usage();
+char *get_hostname();
+char *detect_host();
+char *detect_user();

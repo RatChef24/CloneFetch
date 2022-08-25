@@ -6,59 +6,48 @@
 #include <sys/statvfs.h>
 #include <string.h>
 
-
 #include "fetch.h"
 #include "logos.h"
 #include "util.h"
+#include "display.h"
 
-#define ANSI_COLOR_RED     "\x1b[31m"
-#define ANSI_COLOR_GREEN   "\x1b[32m"
-#define ANSI_COLOR_YELLOW  "\x1b[33m"
-#define ANSI_COLOR_BLUE    "\x1b[34m"
+#define ANSI_COLOR_RED "\x1b[31m"
+#define ANSI_COLOR_GREEN "\x1b[32m"
+#define ANSI_COLOR_YELLOW "\x1b[33m"
+#define ANSI_COLOR_BLUE "\x1b[34m"
 #define ANSI_COLOR_MAGENTA "\x1b[35m"
-#define ANSI_COLOR_CYAN    "\x1b[36m"
-#define ANSI_COLOR_RESET   "\x1b[0m"
+#define ANSI_COLOR_CYAN "\x1b[36m"
+#define ANSI_COLOR_RESET "\x1b[0m"
 
+char **get_logo(char *distro_name)
+{
+    if (!strcmp(distro_name, "Ubuntu"))
+        return ubuntu_logo;
+    else if (!strcmp(distro_name, "Mint"))
+        return mint_logo;
+    else if (!strcmp(distro_name, "EndeavourOS") || !strcmp(distro_name, "Arch"))
+        return arch_logo;
+    else if (!strcmp(distro_name, "Linux Mint"))
+        return mint_logo;
+    else return linux_logo;
 
-int main(int argc, char *argv[]) {
-    //set a custom distro name as an argument
-    printf(argv[1]);
-    if(argc > 0) {
-        set_distro_name(argv[1]);
-
-    }
-
-
-    //print the logo of the distro in use
-    print_functions();
-
-
-
-
-
-    printf( ANSI_COLOR_CYAN"OS:%s", get_distro_name());
-
-    printf( "CPU: %s" ,get_cpu_name());
-
-    printf("Kernel: %s",get_kernel_version());
-
-    printf("Uptime: %s" ,get_uptime());
-
-    printf("Shell: %s" ,get_shell_version());
-
-    printf("Resolution: %s" ,screen_resolution());
-
-    printf("Disk Usage: %s" ,get_disk_usage());
-
-    printf("GPU: %s" ,get_gpu_name());
-
-    printf("RAM: %s" ,get_ram_usage());
-
-    return 0;
-
-
+    return NULL;
 }
 
+int main(int argc, char *argv[])
+{
 
+    char **logo = NULL;
 
+    if (argc > 1)
+        logo = get_logo(argv[1]);
+    else
+        logo = get_logo(get_distro_name());
 
+    if (logo == NULL)
+        return 1;
+
+    display_info(logo);
+
+    return 0;
+}

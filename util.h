@@ -7,7 +7,9 @@
 
 #endif //UNTITLED_UTIL_H
 
+
 void computeDistro();
 void print_functions();
 char *arrayOfFunctions();
 void set_distro_name(char *distro_name);
+void print_str_array();

@@ -88,7 +88,9 @@ char *arch_logo[] = {"" TLCY "                   -`                 " TNRM,
 void printArchLogo(){
     int i;
     for(i = 0; i < 18; i++){
-        printf("%s\n", arch_logo[i]);
+            printf("%s\n", arch_logo[i]);
+
+
     }
 }
 char *mint_logo[] = {"                                       " TNRM,

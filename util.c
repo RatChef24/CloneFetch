@@ -10,7 +10,6 @@
 #include <stdlib.h>
 
 
-char str[];
 
 
 
@@ -18,13 +17,13 @@ char str[];
 
 //prints the get distro name function
 
-void print_functions() {
-    strcpy(str, "get_distro_name");
-    if(strcmp(str, "EndeavourOS Linux")) {
+void print_functions(char* arr) {
+
+    if(strcmp(arr,"EndeavourOS")==0) {
         printArchLogo();
-    } else if (strcmp(str, "Ubuntu Linux")) {
+    } else if (strcmp(arr, "Ubuntu")==0) {
         printUbuntuLogo();
-    } else if (strcmp(str, "Linux Mint")){
+    } else if (strcmp(arr, "Mint")==0){
         printMintLogo();
 
     }
@@ -32,10 +31,7 @@ void print_functions() {
 }
 
 
-//sets a custom distro name with an array as input
-void set_distro_name(char *distro_name) {
-    strcpy(str, distro_name);
-}
+
 
 //merge two char arrays
 char *merge_strings(char *a, char *b){
