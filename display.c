@@ -18,14 +18,13 @@ void display_info(char *logo[], char *arg)
 
         switch (i)
         {
-
-
-            case 0:
-                printf("OS: %s", arg);
-                break;
+            
+        case 0:
+            printf(get_host());
+            break;
 
         case 1:
-            printf("CPU: %s", get_cpu_name());
+            printf("OS: %s", get_distro_name());
             break;
 
         case 2:
@@ -59,9 +58,9 @@ void display_info(char *logo[], char *arg)
         case 9:
             printf("Host: %s", get_host());
             break;
-        case 10:
-            printf("User: %s", detect_user());
-            break;
+
+            case 10:
+                printf("pack: %s", get_packages_installed());
 
 
         }

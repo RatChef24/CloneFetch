@@ -19,3 +19,4 @@ char *get_gpu_name();
 char *get_ram_usage();
 char *detect_user();
 char *get_host();
+char *get_packages_installed();

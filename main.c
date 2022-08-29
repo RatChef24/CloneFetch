@@ -50,11 +50,15 @@ char **get_logo(char *distro_name)
 
     else return linux_logo;
 
-    return NULL;
+
 }
 
 int main(int argc, char *argv[])
 {
+
+    printf(get_host());
+    printf(get_distro_name());
+
 
     char **logo = NULL;
     char *arg = NULL;
@@ -63,6 +67,7 @@ int main(int argc, char *argv[])
     if (argc > 1){
         arg = argv[1];
         arg2 = argv[2];
+
 
 
     }
@@ -78,9 +83,13 @@ int main(int argc, char *argv[])
 
 
 
+        display_info(logo,arg);
 
 
-    display_info(logo,arg);
+
+
+
+
 
     return 0;
     }

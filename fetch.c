@@ -10,6 +10,8 @@
 #include <sys/types.h>
 #include "string.h"
 
+
+
 // detects the name of the linux distribution in use and returns it as a string
 char *get_distro_name()
 {
@@ -41,11 +43,32 @@ char *get_uptime()
 {
     char *uptime = malloc(sizeof(char) * 100);
     FILE *fp = popen("uptime", "r");
-    fgets(uptime, 100, fp);
+    char *line = NULL;
+    size_t len = 0;
+    ssize_t read;
+    while (read = getline(&line, &len, fp) != -1)
+    {
+        //remove some useless data from the line
+        strcpy(uptime, line+14);
+        uptime[strlen(uptime) -43] = '\0';
+    }
     uptime[strcspn(uptime, "\r\n")] = 0;
     pclose(fp);
     return uptime;
 }
+
+
+//gets the number of packages installed in arch linux and returns it as a string
+char *get_packages_installed()
+{
+    char *packages_installed = malloc(sizeof(char) * 100);
+    FILE *fp = popen("pacman -Qq | wc -l", "r");
+    fgets(packages_installed, 100, fp);
+    packages_installed[strcspn(packages_installed, "\r\n")] = 0;
+    pclose(fp);
+    return packages_installed;
+}
+
 
 // detects the version of the shell in use and returns it as a string
 char *get_shell_version()
@@ -104,7 +127,10 @@ char *get_disk_usage()
     {
         if (strstr(line, "/dev/sda1") != NULL)
         {
-            strcpy(disk_usage, line);
+            strcpy(disk_usage, line+36);
+            // remove the last character from the string
+            disk_usage[strlen(disk_usage) -2] = '\0';
+
             break;
         }
     }
@@ -123,58 +149,36 @@ char *get_gpu_name()
     ssize_t read;
     while ((read = getline(&line, &len, fp)) != -1)
     {
-        if (strstr(line, "VGA") != NULL)
-        {
-            strcpy(gpu_name, line+8);
-            break;
-        }
+        //skip some words
+        strcpy(gpu_name, line+35);
+        break;
     }
     gpu_name[strcspn(gpu_name, "\r\n")] = 0;
     pclose(fp);
     return gpu_name;
 }
 
-// gets the memory usage of the system and returns it as a string
-char *get_ram_usage() {
-    char *ram_usage = (char *) malloc(sizeof(char) * 100);
-    FILE *fp = popen("free -m", "r");
-    char *line = NULL;
-    size_t len = 0;
-    ssize_t read;
-    while ((read = getline(&line, &len, fp)) != -1) {
-        if (strstr(line, "Mem") != NULL) {
-            strcpy(ram_usage, line);
-            break;
-        }
-    }
-    ram_usage[strcspn(ram_usage, "\r\n")] = 0;
-    pclose(fp);
-    return ram_usage;
-}
-
-
-
-
-//detect the active user and returns it as a string
-char *detect_user()
-{
-    char *user = (char *)malloc(sizeof(char) * 100);
-    FILE *fp = popen("whoami", "r");
+// gets the percentage of the memory usage of the system and returns it as a string
+char *get_ram_usage(){
+    char *ram_usage = (char *)malloc(sizeof(char) * 100);
+    FILE *fp = popen("free -t | awk 'NR == 2 {printf(\"Current Memory Utilization is : %.2f%\"), $3/$2*100}'", "r");
     char *line = NULL;
     size_t len = 0;
     ssize_t read;
     while ((read = getline(&line, &len, fp)) != -1)
     {
-        if (strstr(line, "whoami") != NULL)
+        if (strstr(line, "Current Memory Utilization is :") != NULL)
         {
-            strcpy(user, line);
+            strcpy(ram_usage, line);
             break;
         }
     }
-    user[strcspn(user, "\r\n")] = 0;
     pclose(fp);
-    return user;
-}
+    return ram_usage;
+    }
+
+
+
 
 //get_hostname returns the hostname of the system and returns it as a string
 
@@ -184,17 +188,14 @@ char *get_host(){
     char *line = NULL;
     size_t len = 0;
     ssize_t read;
-    while ((read = getline(&line, &len, fp)) != -1)
+    while ((read = getline(&line, &len, fp)) !=-1 )
     {
-        if (strstr(line, "hostname") != NULL)
-        {
-            strcpy(host, line);
-            break;
-        }
+        strcpy(host, line);
     }
     host[strcspn(host, "\r\n")] = 0;
     pclose(fp);
     return host;
+    }
 
 
-}
+
