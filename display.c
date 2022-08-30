@@ -24,7 +24,7 @@ void display_info(char *logo[], char *arg)
             break;
 
         case 1:
-            printf("OS: %s", get_distro_name());
+            printf("OS: %s", arg);
             break;
 
         case 2:
@@ -36,32 +36,36 @@ void display_info(char *logo[], char *arg)
             break;
 
         case 4:
-            printf("Shell: %s", get_shell_version());
+            printf("Packages: %s", get_packages_installed());
             break;
 
         case 5:
-            printf("Resolution: %s", screen_resolution());
+            printf("Shell: %s", get_shell_version());
             break;
 
         case 6:
-            printf("Disk Usage: %s", get_disk_usage());
+            printf("Resolution %s", screen_resolution());
             break;
 
         case 7:
-            printf("GPU: %s", get_gpu_name());
+            printf("DE: %s", get_desktop_environment());
             break;
 
         case 8:
-            printf("RAM: %s", get_ram_usage());
+            printf("Disk: %s", get_disk_usage());
             break;
 
         case 9:
-            printf("Host: %s", get_host());
+            printf("CPU: %s", get_cpu_name());
             break;
 
-            case 10:
-                printf("pack: %s", get_packages_installed());
+        case 10:
+            printf("GPU: %s", get_gpu_name());
+            break;
 
+        case 11:
+            printf("RAM: %s", get_ram_usage());
+            break;         
 
         }
 

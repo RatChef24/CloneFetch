@@ -56,8 +56,6 @@ char **get_logo(char *distro_name)
 int main(int argc, char *argv[])
 {
 
-    printf(get_host());
-    printf(get_distro_name());
 
 
     char **logo = NULL;

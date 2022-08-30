@@ -17,12 +17,21 @@ char *get_distro_name()
 {
     char *distro_name = malloc(sizeof(char) * 100);
     FILE *fp = fopen("/etc/os-release", "r");
-    fgets(distro_name, 100, fp);
-    strcpy(distro_name, distro_name +5);
-    distro_name[strcspn(distro_name, "\r\n")] = 0;
-    distro_name[strlen(distro_name) ] = 0;
-    fclose(fp);
+    char *line = NULL;
+    size_t len = 0;
+    ssize_t read;
+    //return the value of the line that starts with NAME=, this is used because in debian based linux
+    //the os-release file is different
+    while ((read = getline(&line, &len, fp)) != -1)
+    {
+        if (strncmp(line, "NAME=", 5) == 0)
+        {
+            strcpy(distro_name, line + 5);
+            break;
+        }
+    }
 
+    distro_name[strcspn(distro_name, "\r\n")] = 0;
     return distro_name;
 }
 
@@ -62,10 +71,24 @@ char *get_uptime()
 char *get_packages_installed()
 {
     char *packages_installed = malloc(sizeof(char) * 100);
-    FILE *fp = popen("pacman -Qq | wc -l", "r");
-    fgets(packages_installed, 100, fp);
-    packages_installed[strcspn(packages_installed, "\r\n")] = 0;
-    pclose(fp);
+    if(!strcmp(get_distro_name(),"EndeavourOS") || strcmp(get_distro_name(), "Arch Linux")) {
+        FILE *fp = popen("pacman -Qq | wc -l", "r");
+        fgets(packages_installed, 100, fp);
+        packages_installed[strcspn(packages_installed, "\r\n")] = 0;
+        pclose(fp);
+    } else if (!strcmp(get_distro_name(),"Ubuntu") || strcmp(get_distro_name(), "Linux Mint") || strcmp(get_distro_name(), "Debian GNU/Linux") || strcmp(get_distro_name(), "Kali GNU/Linux")) {
+        FILE *fp = popen("dpkg -l | wc -l", "r");
+        fgets(packages_installed, 100, fp);
+        packages_installed[strcspn(packages_installed, "\r\n")] = 0;
+        pclose(fp);
+        // else copy to the packages_installed variable "Distro not supported"
+    } else {
+        strcpy(packages_installed, "Distro not supported");
+
+    }
+
+
+
     return packages_installed;
 }
 
@@ -87,10 +110,27 @@ char *screen_resolution()
     char *screen_resolution = malloc(sizeof(char) * 100);
     FILE *fp = popen("xrandr | grep '*'", "r");
     fgets(screen_resolution, 100, fp);
-    screen_resolution[strcspn(screen_resolution, "\r\n")] = 0;
+    //remove the refresh rate from the string as it is not needed
+    screen_resolution[strlen(screen_resolution) -10] = '\0';
+    //remove the first 3 blank characters
+    screen_resolution = screen_resolution+3;
     pclose(fp);
     return screen_resolution;
 }
+
+
+//detects the desktop environment in use and returns it as a string
+char *get_desktop_environment()
+{
+    char *desktop_environment = malloc(sizeof(char) * 100);
+    FILE *fp = popen("echo $XDG_CURRENT_DESKTOP", "r");
+    fgets(desktop_environment, 100, fp);
+    desktop_environment[strcspn(desktop_environment, "\r\n")] = 0;
+    pclose(fp);
+    return desktop_environment;
+}
+
+
 
 // detects the name of the cpu in use and returns it as a string
 char *get_cpu_name()
@@ -110,6 +150,7 @@ char *get_cpu_name()
             break;
         }
     }
+    cpu_name = cpu_name +13;
     cpu_name[strcspn(cpu_name, "\r\n")] = 0;
     fclose(cpuinfo);
     return cpu_name;

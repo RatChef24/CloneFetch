@@ -20,3 +20,6 @@ char *get_ram_usage();
 char *detect_user();
 char *get_host();
 char *get_packages_installed();
+char *get_desktop_environment();
+char *get_window_manager();
+char *get_packages_installed();
