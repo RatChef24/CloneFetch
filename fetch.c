@@ -97,7 +97,7 @@ char *get_packages_installed()
 char *get_shell_version()
 {
     char *shell_version = malloc(sizeof(char) * 100);
-    FILE *fp = popen("sh --version", "r");
+    FILE *fp = popen("echo \"$SHELL\"", "r");
     fgets(shell_version, 100, fp);
     shell_version[strcspn(shell_version, "\r\n")] = 0;
     pclose(fp);
