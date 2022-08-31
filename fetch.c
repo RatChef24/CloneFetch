@@ -202,7 +202,7 @@ char *get_gpu_name()
 // gets the percentage of the memory usage of the system and returns it as a string
 char *get_ram_usage(){
     char *ram_usage = (char *)malloc(sizeof(char) * 100);
-    FILE *fp = popen("free -t | awk 'NR == 2 {printf(\"Current Memory Utilization is : %.2f%\"), $3/$2*100}'", "r");
+    FILE *fp = popen("free -t | awk 'NR == 2 {printf(\"Current Memory Utilization is : %.2f%%\"), $3/$2*100}'", "r");
     char *line = NULL;
     size_t len = 0;
     ssize_t read;
