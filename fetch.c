@@ -58,7 +58,7 @@ char *get_uptime()
     while (read = getline(&line, &len, fp) != -1)
     {
         //remove some useless data from the line
-        strcpy(uptime, line+14);
+        strcpy(uptime, line+13);
         uptime[strlen(uptime) -43] = '\0';
     }
     uptime[strcspn(uptime, "\r\n")] = 0;
@@ -71,12 +71,12 @@ char *get_uptime()
 char *get_packages_installed()
 {
     char *packages_installed = malloc(sizeof(char) * 100);
-    if(!strcmp(get_distro_name(),"EndeavourOS") || strcmp(get_distro_name(), "Arch Linux")) {
+    if(!strcmp(get_distro_name(),"EndeavourOS") || !strcmp(get_distro_name(), "Arch Linux")) {
         FILE *fp = popen("pacman -Qq | wc -l", "r");
         fgets(packages_installed, 100, fp);
         packages_installed[strcspn(packages_installed, "\r\n")] = 0;
         pclose(fp);
-    } else if (!strcmp(get_distro_name(),"Ubuntu") || strcmp(get_distro_name(), "Linux Mint") || strcmp(get_distro_name(), "Debian GNU/Linux") || strcmp(get_distro_name(), "Kali GNU/Linux")) {
+    } else if (!strcmp(get_distro_name(),"Ubuntu") || !strcmp(get_distro_name(), "Linux Mint") || !strcmp(get_distro_name(), "Debian GNU/Linux") || !strcmp(get_distro_name(), "Kali GNU/Linux")) {
         FILE *fp = popen("dpkg -l | wc -l", "r");
         fgets(packages_installed, 100, fp);
         packages_installed[strcspn(packages_installed, "\r\n")] = 0;
