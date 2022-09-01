@@ -173,6 +173,8 @@ char *get_disk_usage()
             disk_usage[strlen(disk_usage) -2] = '\0';
 
             break;
+        } else {
+            strcpy(disk_usage, "No disk found");
         }
     }
     disk_usage[strcspn(disk_usage, "\r\n")] = 0;
@@ -202,17 +204,16 @@ char *get_gpu_name()
 // gets the percentage of the memory usage of the system and returns it as a string
 char *get_ram_usage(){
     char *ram_usage = (char *)malloc(sizeof(char) * 100);
-    FILE *fp = popen("free -t | awk 'NR == 2 {printf(\"Current Memory Utilization is : %.2f%%\"), $3/$2*100}'", "r");
+    FILE *fp = popen("free -t | awk 'NR == 2 {printf(\"%.2f%%\"), $3/$2*100}'", "r");
     char *line = NULL;
     size_t len = 0;
     ssize_t read;
     while ((read = getline(&line, &len, fp)) != -1)
     {
-        if (strstr(line, "Current Memory Utilization is :") != NULL)
-        {
+
             strcpy(ram_usage, line);
             break;
-        }
+
     }
     pclose(fp);
     return ram_usage;
