@@ -82,7 +82,13 @@ char *get_packages_installed()
         packages_installed[strcspn(packages_installed, "\r\n")] = 0;
         pclose(fp);
         // else copy to the packages_installed variable "Distro not supported"
+    } else if (!strcmp(get_distro_name(),"Fedora")) {
+        FILE *fp = popen("dnf list installed | wc -l", "r");
+        fgets(packages_installed, 100, fp);
+        packages_installed[strcspn(packages_installed, "\r\n")] = 0;
+        pclose(fp);
     } else {
+
         strcpy(packages_installed, "Distro not supported");
 
     }
