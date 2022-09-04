@@ -76,13 +76,13 @@ char *get_packages_installed()
         fgets(packages_installed, 100, fp);
         packages_installed[strcspn(packages_installed, "\r\n")] = 0;
         pclose(fp);
-    } else if (!strcmp(get_distro_name(),"Ubuntu") || !strcmp(get_distro_name(), "Linux Mint") || !strcmp(get_distro_name(), "Debian GNU/Linux") || !strcmp(get_distro_name(), "Kali GNU/Linux")) {
+    } else if (!strcmp(get_distro_name(),"\"Ubuntu\"") || !strcmp(get_distro_name(), "Linux Mint") || !strcmp(get_distro_name(), "Debian GNU/Linux") || !strcmp(get_distro_name(), "Kali GNU/Linux")) {
         FILE *fp = popen("dpkg -l | wc -l", "r");
         fgets(packages_installed, 100, fp);
         packages_installed[strcspn(packages_installed, "\r\n")] = 0;
         pclose(fp);
         // else copy to the packages_installed variable "Distro not supported"
-    } else if (!strcmp(get_distro_name(),"Fedora")) {
+    } else if (!strcmp(get_distro_name(),"\"Fedora Linux\"")) {
         FILE *fp = popen("dnf list installed | wc -l", "r");
         fgets(packages_installed, 100, fp);
         packages_installed[strcspn(packages_installed, "\r\n")] = 0;

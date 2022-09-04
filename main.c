@@ -27,11 +27,11 @@ char **get_logo(char *distro_name)
         return mint_logo;
     else if (!strcmp(distro_name, "EndeavourOS") || !strcmp(distro_name, "Arch"))
         return arch_logo;
-    else if (!strcmp(distro_name, "Debian GNU/Linux") || !strcmp(distro_name, "Debian")|| strcmp(distro_name, "Debian Linux"))
+    else if (!strcmp(distro_name, "Debian GNU/Linux") || !strcmp(distro_name, "Debian")|| !strcmp(distro_name, "Debian Linux"))
         return debian_logo;
     else if (!strcmp(distro_name, "elementary OS"))
         return elementaryos_logo;
-    else if (!strcmp(distro_name, "Fedora"))
+    else if (!strcmp(distro_name, "\"Fedora Linux\""))
         return fedora_logo;
     else if (!strcmp(distro_name, "Gentoo"))
         return gentoo_logo;

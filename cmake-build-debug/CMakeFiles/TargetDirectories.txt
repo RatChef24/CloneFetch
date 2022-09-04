@@ -1,3 +1,3 @@
-/home/ratchef/CLionProjects/untitled/cmake-build-debug/CMakeFiles/untitled.dir
-/home/ratchef/CLionProjects/untitled/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/ratchef/CLionProjects/untitled/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ratchef/Documenti/GitHub/CloneFetch/cmake-build-debug/CMakeFiles/untitled.dir
+/home/ratchef/Documenti/GitHub/CloneFetch/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ratchef/Documenti/GitHub/CloneFetch/cmake-build-debug/CMakeFiles/rebuild_cache.dir
