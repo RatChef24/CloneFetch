@@ -5,14 +5,11 @@
 #include "fetch.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include <sys/syscall.h>
-#include <sys/types.h>
 #include "string.h"
 #include "setjmp.h"
-#include <X11/Xlib.h>
 
-jmp_buf savebuf;
+
+
 
 
 // detects the name of the linux distribution in use and returns it as a string
@@ -152,31 +149,17 @@ char *get_cpu_name()
     return cpu_name;
 }
 
-// gets the usage of the disk in use and returns it as a string
-char *get_disk_usage()
-{
-    char *disk_usage = (char *)malloc(sizeof(char) * 100);
-    FILE *fp = popen("df -h", "r");
-    char *line = NULL;
-    size_t len = 0;
-    ssize_t read;
-    while ((read = getline(&line, &len, fp)) != -1)
-    {
-        if (strstr(line, "/dev/sda1") != NULL)
-        {
-            strcpy(disk_usage, line+36);
-            // remove the last character from the string
-            disk_usage[strlen(disk_usage) -2] = '\0';
-
-            break;
-        } else {
-            strcpy(disk_usage, "No disk found");
-        }
-    }
+// gets the computer's total disk capacity and usage and returns it as a string
+char *get_disk_usage(){
+    char *disk_usage = malloc(sizeof(char) * 100);
+    FILE *fp = popen("df -h | grep /dev/sda | awk '{print $2}'", "r");
+    fgets(disk_usage, 100, fp);
     disk_usage[strcspn(disk_usage, "\r\n")] = 0;
     pclose(fp);
     return disk_usage;
 }
+
+
 
 // gets the name of the gpu in use and returns it as a string
 char *get_gpu_name()
@@ -214,10 +197,6 @@ char *get_ram_usage(){
     pclose(fp);
     return ram_usage;
     }
-
-
-
-
 
 
 
