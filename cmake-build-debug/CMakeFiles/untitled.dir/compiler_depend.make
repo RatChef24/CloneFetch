@@ -143,7 +143,10 @@ CMakeFiles/untitled.dir/fetch.c.o: ../fetch.c \
   /usr/include/string.h \
   /usr/include/bits/types/locale_t.h \
   /usr/include/bits/types/__locale_t.h \
-  /usr/include/strings.h
+  /usr/include/strings.h \
+  /usr/include/setjmp.h \
+  /usr/include/bits/setjmp.h \
+  /usr/include/bits/types/struct___jmp_buf_tag.h
 
 CMakeFiles/untitled.dir/logos.c.o: ../logos.c \
   /usr/include/stdc-predef.h \
@@ -365,6 +368,8 @@ CMakeFiles/untitled.dir/util.c.o: ../util.c \
 
 /usr/include/bits/typesizes.h:
 
+/usr/include/bits/types/struct___jmp_buf_tag.h:
+
 /usr/include/bits/waitstatus.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/12/include/stdarg.h:
@@ -402,6 +407,10 @@ CMakeFiles/untitled.dir/util.c.o: ../util.c \
 /usr/include/bits/libc-header-start.h:
 
 ../display.c:
+
+/usr/include/bits/setjmp.h:
+
+/usr/include/setjmp.h:
 
 /usr/include/bits/types/__mbstate_t.h:
 

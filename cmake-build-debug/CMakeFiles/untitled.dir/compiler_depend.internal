@@ -146,6 +146,9 @@ CMakeFiles/untitled.dir/fetch.c.o
  /usr/include/bits/types/locale_t.h
  /usr/include/bits/types/__locale_t.h
  /usr/include/strings.h
+ /usr/include/setjmp.h
+ /usr/include/bits/setjmp.h
+ /usr/include/bits/types/struct___jmp_buf_tag.h
 
 CMakeFiles/untitled.dir/logos.c.o
  /home/ratchef/Documenti/GitHub/CloneFetch/logos.c

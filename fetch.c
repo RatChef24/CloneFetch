@@ -9,7 +9,10 @@
 #include <sys/syscall.h>
 #include <sys/types.h>
 #include "string.h"
+#include "setjmp.h"
+#include <x11/Xlib.h>
 
+jmp_buf savebuf;
 
 
 // detects the name of the linux distribution in use and returns it as a string
@@ -113,14 +116,22 @@ char *get_shell_version()
 // detects the resolution of the screen and returns it as a string
 char *screen_resolution()
 {
+
+
     char *screen_resolution = malloc(sizeof(char) * 100);
+
     FILE *fp = popen("xrandr | grep '*'", "r");
-    fgets(screen_resolution, 100, fp);
-    //remove the refresh rate from the string as it is not needed
-    screen_resolution[strlen(screen_resolution) -10] = '\0';
-    //remove the first 3 blank characters
-    screen_resolution = screen_resolution+3;
-    pclose(fp);
+    if (fp == NULL){
+        printf(1);
+    } else {
+        fgets(screen_resolution, 100, fp);
+        //remove the refresh rate from the string as it is not needed
+        screen_resolution[strlen(screen_resolution) -10] = '\0';
+        //remove the first 3 blank characters
+        screen_resolution = screen_resolution+3;
+        pclose(fp);
+    }
+
     return screen_resolution;
 }
 
@@ -224,6 +235,11 @@ char *get_ram_usage(){
     pclose(fp);
     return ram_usage;
     }
+
+
+
+
+
 
 
 
