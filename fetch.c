@@ -10,7 +10,7 @@
 #include <sys/types.h>
 #include "string.h"
 #include "setjmp.h"
-#include <x11/Xlib.h>
+#include <X11/Xlib.h>
 
 jmp_buf savebuf;
 
@@ -113,27 +113,6 @@ char *get_shell_version()
     return shell_version;
 }
 
-// detects the resolution of the screen and returns it as a string
-char *screen_resolution()
-{
-
-
-    char *screen_resolution = malloc(sizeof(char) * 100);
-
-    FILE *fp = popen("xrandr | grep '*'", "r");
-    if (fp == NULL){
-        printf(1);
-    } else {
-        fgets(screen_resolution, 100, fp);
-        //remove the refresh rate from the string as it is not needed
-        screen_resolution[strlen(screen_resolution) -10] = '\0';
-        //remove the first 3 blank characters
-        screen_resolution = screen_resolution+3;
-        pclose(fp);
-    }
-
-    return screen_resolution;
-}
 
 
 //detects the desktop environment in use and returns it as a string
@@ -261,5 +240,20 @@ char *get_host(){
     return host;
     }
 
-
+//detect_res
+//detects the combined resolution of all the monitors and returns it as a string
+char *detect_res(){
+    char *res = (char *)malloc(sizeof(char) * 100);
+    FILE *fp = popen("xrandr | grep '*' | awk '{print $1}'", "r");
+    char *line = NULL;
+    size_t len = 0;
+    ssize_t read;
+    while ((read = getline(&line, &len, fp)) !=-1 )
+    {
+        strcpy(res, line);
+    }
+    res[strcspn(res, "\r\n")] = 0;
+    pclose(fp);
+    return res;
+    }
 

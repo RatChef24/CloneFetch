@@ -44,7 +44,7 @@ void display_info(char *logo[], char *arg)
             break;
 
         case 6:
-            printf("Resolution %s", screen_resolution());
+            printf("Resolution: %s", detect_res());
             break;
 
         case 7:

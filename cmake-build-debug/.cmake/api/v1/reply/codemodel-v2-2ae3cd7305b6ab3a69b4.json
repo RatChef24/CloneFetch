@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/ratchef/Documenti/GitHub/CloneFetch/cmake-build-debug",
-		"source" : "/home/ratchef/Documenti/GitHub/CloneFetch"
+		"build" : "/home/ratchef/CLionProjects/untitled/cmake-build-debug",
+		"source" : "/home/ratchef/CLionProjects/untitled"
 	},
 	"version" : 
 	{

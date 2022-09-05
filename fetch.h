@@ -23,3 +23,4 @@ char *get_packages_installed();
 char *get_desktop_environment();
 char *get_window_manager();
 char *get_packages_installed();
+char *detect_res();
