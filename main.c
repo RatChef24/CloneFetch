@@ -21,7 +21,7 @@
 
 char **get_logo(char *distro_name)
 {
-    if (!strcmp(distro_name, "Ubuntu"))
+    if (!strcmp(distro_name, "\"Ubuntu Linux\""))
         return ubuntu_logo;
     else if (!strcmp(distro_name, "Mint") || !strcmp(distro_name, "Linux Mint"))
         return mint_logo;
