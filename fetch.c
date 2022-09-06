@@ -7,7 +7,8 @@
 #include <stdlib.h>
 #include "string.h"
 #include "sys/statvfs.h">
-
+#include <sys/stat.h>
+#include <errno.h>
 
 
 
@@ -234,16 +235,22 @@ char *get_host(){
 //detects the combined resolution of all the monitors and returns it as a string
 char *detect_res(){
     char *res = (char *)malloc(sizeof(char) * 100);
-    FILE *fp = popen("xrandr | grep '*' | awk '{print $1}'", "r");
-    char *line = NULL;
-    size_t len = 0;
-    ssize_t read;
-    while ((read = getline(&line, &len, fp)) !=-1 )
-    {
-        strcpy(res, line);
+    struct stat sts;
+    if (!stat("proc/xrandr", &sts) == -1 && errno == ENOENT){
+        printf("xrandr not installed");
+    } else {
+        FILE *fp = popen("xrandr | grep '*' | awk '{print $1}'", "r");
+        char *line = NULL;
+        size_t len = 0;
+        ssize_t read;
+        while ((read = getline(&line, &len, fp)) !=-1 )
+        {
+            strcpy(res, line);
+        }
+        res[strcspn(res, "\r\n")] = 0;
+        pclose(fp);
     }
-    res[strcspn(res, "\r\n")] = 0;
-    pclose(fp);
+
     return res;
     }
 

@@ -134,7 +134,16 @@ CMakeFiles/untitled.dir/fetch.c.o: ../fetch.c \
   /usr/include/bits/types/__locale_t.h \
   /usr/include/strings.h \
   /usr/include/sys/statvfs.h \
-  /usr/include/bits/statvfs.h
+  /usr/include/bits/statvfs.h \
+  /usr/include/sys/stat.h \
+  /usr/include/bits/stat.h \
+  /usr/include/bits/struct_stat.h \
+  /usr/include/errno.h \
+  /usr/include/bits/errno.h \
+  /usr/include/linux/errno.h \
+  /usr/include/asm/errno.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/errno-base.h
 
 CMakeFiles/untitled.dir/logos.c.o: ../logos.c \
   /usr/include/stdc-predef.h \
@@ -236,11 +245,22 @@ CMakeFiles/untitled.dir/main.c.o: ../main.c \
   /usr/include/strings.h \
   ../fetch.h \
   ../logos.h \
-  ../util.h \
   ../display.h
 
 
 ../main.c:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/errno.h:
+
+/usr/include/bits/struct_stat.h:
+
+/usr/include/bits/stat.h:
 
 /usr/include/string.h:
 
@@ -253,6 +273,8 @@ CMakeFiles/untitled.dir/main.c.o: ../main.c \
 /usr/include/bits/syscall.h:
 
 /usr/include/asm/unistd_64.h:
+
+/usr/include/bits/errno.h:
 
 /usr/include/strings.h:
 
@@ -302,13 +324,13 @@ CMakeFiles/untitled.dir/main.c.o: ../main.c \
 
 /usr/include/gnu/stubs.h:
 
-../util.h:
-
 /usr/include/bits/uintn-identity.h:
 
 ../logos.h:
 
 /usr/include/stdc-predef.h:
+
+/usr/include/sys/stat.h:
 
 /usr/include/bits/types/FILE.h:
 
@@ -347,6 +369,8 @@ CMakeFiles/untitled.dir/main.c.o: ../main.c \
 /usr/include/bits/types/__sigset_t.h:
 
 /usr/include/bits/timesize.h:
+
+/usr/include/asm-generic/errno-base.h:
 
 /usr/include/bits/select.h:
 
