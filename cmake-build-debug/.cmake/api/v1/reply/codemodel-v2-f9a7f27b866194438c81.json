@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "untitled::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-untitled-Debug-1e4ac251d3f6480727af.json",
+					"jsonFile" : "target-untitled-Debug-abe077b7fde71b4f2d15.json",
 					"name" : "untitled",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/ratchef/CLionProjects/untitled/cmake-build-debug",
-		"source" : "/home/ratchef/CLionProjects/untitled"
+		"build" : "/home/ratchef/Documenti/GitHub/CloneFetch/cmake-build-debug",
+		"source" : "/home/ratchef/Documenti/GitHub/CloneFetch"
 	},
 	"version" : 
 	{

@@ -8,7 +8,6 @@
 
 #include "fetch.h"
 #include "logos.h"
-#include "util.h"
 #include "display.h"
 
 #define ANSI_COLOR_RED "\x1b[31m"

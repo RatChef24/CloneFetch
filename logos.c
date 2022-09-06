@@ -21,45 +21,7 @@
 #define TWHT "\x1B[1;37m" /* white */
 #include <stdio.h>
 
-char *logoOldarch(){
-    char *logo = { "              __                     " ,
-                   "          _=(SDGJT=_                 "  ,
-                   "        _GTDJHGGFCVS)                " ,
-                   "       ,GTDJGGDTDFBGX0               " ,
-                   "      JDJDIJHRORVFSBSVL"  "-=+=,_        ",
-                   "     IJFDUFHJNXIXCDXDSV,"  "  \"DEBL      ",
-                   "    [LKDSDJTDU=OUSCSBFLD."  "   '?ZWX,   " ,
-                   "   ,LMDSDSWH'     `DCBOSI"  "     DRDS], " ,
-                   "   SDDFDFH'         !YEWD,"  "   )HDROD  " ,
-                   "  !KMDOCG            &GSU|"  "_GFHRGO'   " ,
-                   "  HKLSGP'"  "           __"  "TKM0"  "GHRBV)'    " ,
-                   " JSNRVW'"  "       __+MNAEC"  "IOI,"  "BN'       " ,
-                   " HELK['"  "    __,=OFFXCBGHC"  "FD)          " ,
-                   " ?KGHE "  "_-#DASDFLSV='"  "    'EF          " ,
-                   " 'EHTI                    !H         " ,
-                   "  `0F'                    '!         " ,
-                  "                                     " ,
-                  "                                     " };
-    return logo;
-}
-char *oldarch_logo[] = {TWHT "              __                     " TNRM,
-                        TWHT "          _=(SDGJT=_                 " TNRM,
-                        TWHT "        _GTDJHGGFCVS)                " TNRM,
-                        TWHT "       ,GTDJGGDTDFBGX0               " TNRM,
-                        TWHT "      JDJDIJHRORVFSBSVL" TLBL "-=+=,_        " TNRM,
-                        TWHT "     IJFDUFHJNXIXCDXDSV," TLBL "  \"DEBL      " TNRM,
-                        TWHT "    [LKDSDJTDU=OUSCSBFLD." TLBL "   '?ZWX,   " TNRM,
-                        TWHT "   ,LMDSDSWH'     `DCBOSI" TLBL "     DRDS], " TNRM,
-                        TWHT "   SDDFDFH'         !YEWD," TLBL "   )HDROD  " TNRM,
-                        TWHT "  !KMDOCG            &GSU|" TLBL "_GFHRGO'   " TNRM,
-                        TWHT "  HKLSGP'" TLBL "           __" TWHT "TKM0" TLBL "GHRBV)'    " TNRM,
-                        TWHT " JSNRVW'" TLBL "       __+MNAEC" TWHT "IOI," TLBL "BN'       " TNRM,
-                        TWHT " HELK['" TLBL "    __,=OFFXCBGHC" TWHT "FD)          " TNRM,
-                        TWHT " ?KGHE " TLBL "_-#DASDFLSV='" TWHT "    'EF          " TNRM,
-                        TWHT " 'EHTI                    !H         " TNRM,
-                        TWHT "  `0F'                    '!         " TNRM,
-                        "                                     " TNRM,
-                        "                                     " TNRM};
+
 
 /* 19 */
 char *arch_logo[] = {"" TLCY "                   -`                 " TNRM,
@@ -85,14 +47,7 @@ char *arch_logo[] = {"" TLCY "                   -`                 " TNRM,
 
 /* 18 */
 
-void printArchLogo(){
-    int i;
-    for(i = 0; i < 18; i++){
-            printf("%s\n", arch_logo[i]);
 
-
-    }
-}
 char *mint_logo[] = {"                                       " TNRM,
                      TLGN " MMMMMMMMMMMMMMMMMMMMMMMMMmds+.       " TNRM,
                      TLGN " MMm----::-://////////////oymNMd+`    " TNRM,
@@ -113,12 +68,7 @@ char *mint_logo[] = {"                                       " TNRM,
                      "                                      " TNRM};
 
 /* 18 */
-void printMintLogo(){
-    int i;
-    for(i = 0; i < 18; i++){
-        printf("%s\n", mint_logo[i]);
-    }
-}
+
 char *lmde_logo[] = {"          " TWHT "`.-::---..            " TNRM,
                      TLGN "       .:++++ooooosssoo:.      " TNRM,
                      TLGN "     .+o++::.      `.:oos+.    " TNRM,
@@ -166,12 +116,7 @@ char *ubuntu_logo[] = {TLRD "                          ./+o+-      " TNRM,
                        TYLW "                          `oo++.      " TNRM};
 
 /* 18 */
-void printUbuntuLogo(){
-    int i;
-    for(i = 0; i < 18; i++){
-        printf("%s\n", ubuntu_logo[i]);
-    }
-}
+
 char *debian_logo[] = {"  " TWHT "       _,met$$$$$gg.           " TNRM,
                        "  " TWHT "    ,g$$$$$$$$$$$$$$$P.       " TNRM,
                        "  " TWHT "  ,g$$P\"\"       \"\"\"Y$$.\".     " TNRM,

@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "string.h"
-#include "setjmp.h"
+#include "sys/statvfs.h">
 
 
 
@@ -149,14 +149,25 @@ char *get_cpu_name()
     return cpu_name;
 }
 
-// gets the computer's total disk capacity and usage and returns it as a string
+// gets the computer's total disk capacity using the statvs library and usage and returns it as a string
 char *get_disk_usage(){
+    const unsigned int GB = 1024 * 1024 * 1024;
+    struct statvfs buffer;
+    int ret = statvfs("/home", &buffer);
     char *disk_usage = malloc(sizeof(char) * 100);
-    FILE *fp = popen("df -h | grep /dev/sda | awk '{print $2}'", "r");
-    fgets(disk_usage, 100, fp);
-    disk_usage[strcspn(disk_usage, "\r\n")] = 0;
-    pclose(fp);
-    return disk_usage;
+
+    if (!ret){
+        const double total = (double)buffer.f_blocks * buffer.f_frsize / GB;
+        double available = (double)(buffer.f_bfree * buffer.f_frsize) / GB;
+        double used = total - available;
+        double usedPercentage = (double)(used / total) * (double)100;
+        //put the values in the disk usage string
+        sprintf(disk_usage, "%.2fGB / %.2fGB (%.2f%%)", used, total, usedPercentage);
+
+        }
+
+    return  disk_usage;
+
 }
 
 
