@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "untitled"
+			"path" : "CloneFetch"
 		}
 	],
 	"backtrace" : 1,
@@ -59,7 +59,7 @@
 			]
 		}
 	],
-	"id" : "untitled::@6890427a1f51a3e7e1df",
+	"id" : "CloneFetch::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -75,8 +75,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "untitled",
-	"nameOnDisk" : "untitled",
+	"name" : "CloneFetch",
+	"nameOnDisk" : "CloneFetch",
 	"paths" : 
 	{
 		"build" : ".",

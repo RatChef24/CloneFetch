@@ -1,4 +1,4 @@
-CMakeFiles/untitled.dir/fetch.c.o: \
+CMakeFiles/CloneFetch.dir/fetch.c.o: \
  /home/ratchef/Documenti/GitHub/CloneFetch/fetch.c \
  /usr/include/stdc-predef.h \
  /home/ratchef/Documenti/GitHub/CloneFetch/fetch.h /usr/include/stdio.h \

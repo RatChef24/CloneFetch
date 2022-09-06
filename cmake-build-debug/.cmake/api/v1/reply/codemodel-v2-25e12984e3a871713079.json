@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "untitled",
+					"name" : "CloneFetch",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "untitled::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-untitled-Debug-abe077b7fde71b4f2d15.json",
-					"name" : "untitled",
+					"id" : "CloneFetch::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CloneFetch-Debug-104644e429dfb1b98481.json",
+					"name" : "CloneFetch",
 					"projectIndex" : 0
 				}
 			]

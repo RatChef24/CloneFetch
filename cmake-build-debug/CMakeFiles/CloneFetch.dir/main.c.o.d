@@ -1,7 +1,6 @@
-CMakeFiles/untitled.dir/fetch.c.o: \
- /home/ratchef/Documenti/GitHub/CloneFetch/fetch.c \
- /usr/include/stdc-predef.h \
- /home/ratchef/Documenti/GitHub/CloneFetch/fetch.h /usr/include/stdio.h \
+CMakeFiles/CloneFetch.dir/main.c.o: \
+ /home/ratchef/Documenti/GitHub/CloneFetch/main.c \
+ /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/bits/libc-header-start.h /usr/include/features.h \
  /usr/include/features-time64.h /usr/include/bits/wordsize.h \
  /usr/include/bits/timesize.h /usr/include/sys/cdefs.h \
@@ -31,8 +30,15 @@ CMakeFiles/untitled.dir/fetch.c.o: \
  /usr/include/bits/pthreadtypes-arch.h \
  /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \
  /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
- /usr/include/bits/stdlib-float.h /usr/include/string.h \
- /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
- /usr/include/strings.h /usr/include/sys/statvfs.h \
- /usr/include/bits/statvfs.h /usr/include/sys/stat.h \
- /usr/include/bits/stat.h /usr/include/bits/struct_stat.h
+ /usr/include/bits/stdlib-float.h /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+ /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
+ /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
+ /usr/include/sys/syscall.h /usr/include/asm/unistd.h \
+ /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
+ /usr/include/sys/statvfs.h /usr/include/bits/statvfs.h \
+ /usr/include/string.h /usr/include/bits/types/locale_t.h \
+ /usr/include/bits/types/__locale_t.h /usr/include/strings.h \
+ /home/ratchef/Documenti/GitHub/CloneFetch/fetch.h \
+ /home/ratchef/Documenti/GitHub/CloneFetch/logos.h \
+ /home/ratchef/Documenti/GitHub/CloneFetch/display.h

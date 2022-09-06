@@ -19,7 +19,7 @@ void printUbuntuLogo();
 void printWindowsLogo();
 void printLinuxLogo();
 void printAndroidLogo();
-void printLmdeLogo();
+
 void printUbuntuLogo();
 void printDebianLogo();
 void printCrunchbangLogo();
@@ -59,7 +59,6 @@ void printAngstromLogo();
 extern char *oldarch_logo[];
 extern char *arch_logo[];
 extern char *mint_logo[];
-extern char *lmde_logo[];
 extern char *ubuntu_logo[];
 extern char *debian_logo[];
 extern char *crunchbang_logo[];

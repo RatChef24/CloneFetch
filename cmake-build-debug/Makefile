@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named untitled
+# Target rules for targets named CloneFetch
 
 # Build rule for target.
-untitled: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 untitled
-.PHONY : untitled
+CloneFetch: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CloneFetch
+.PHONY : CloneFetch
 
 # fast build rule for target.
-untitled/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/build
-.PHONY : untitled/fast
+CloneFetch/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/build
+.PHONY : CloneFetch/fast
 
 display.o: display.c.o
 .PHONY : display.o
 
 # target to build an object file
 display.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/display.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/display.c.o
 .PHONY : display.c.o
 
 display.i: display.c.i
@@ -142,7 +142,7 @@ display.i: display.c.i
 
 # target to preprocess a source file
 display.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/display.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/display.c.i
 .PHONY : display.c.i
 
 display.s: display.c.s
@@ -150,7 +150,7 @@ display.s: display.c.s
 
 # target to generate assembly for a file
 display.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/display.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/display.c.s
 .PHONY : display.c.s
 
 fetch.o: fetch.c.o
@@ -158,7 +158,7 @@ fetch.o: fetch.c.o
 
 # target to build an object file
 fetch.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/fetch.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/fetch.c.o
 .PHONY : fetch.c.o
 
 fetch.i: fetch.c.i
@@ -166,7 +166,7 @@ fetch.i: fetch.c.i
 
 # target to preprocess a source file
 fetch.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/fetch.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/fetch.c.i
 .PHONY : fetch.c.i
 
 fetch.s: fetch.c.s
@@ -174,7 +174,7 @@ fetch.s: fetch.c.s
 
 # target to generate assembly for a file
 fetch.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/fetch.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/fetch.c.s
 .PHONY : fetch.c.s
 
 logos.o: logos.c.o
@@ -182,7 +182,7 @@ logos.o: logos.c.o
 
 # target to build an object file
 logos.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/logos.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/logos.c.o
 .PHONY : logos.c.o
 
 logos.i: logos.c.i
@@ -190,7 +190,7 @@ logos.i: logos.c.i
 
 # target to preprocess a source file
 logos.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/logos.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/logos.c.i
 .PHONY : logos.c.i
 
 logos.s: logos.c.s
@@ -198,7 +198,7 @@ logos.s: logos.c.s
 
 # target to generate assembly for a file
 logos.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/logos.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/logos.c.s
 .PHONY : logos.c.s
 
 main.o: main.c.o
@@ -206,7 +206,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -214,7 +214,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -222,7 +222,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -233,7 +233,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... untitled"
+	@echo "... CloneFetch"
 	@echo "... display.o"
 	@echo "... display.i"
 	@echo "... display.s"

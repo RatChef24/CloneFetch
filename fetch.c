@@ -6,11 +6,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "string.h"
-#include "sys/statvfs.h">
+#include "sys/statvfs.h"//>
 #include <sys/stat.h>
-#include <errno.h>
-#include <sys/types.h>
-#include <signal.h>
 
 
 
@@ -22,10 +19,9 @@ char *get_distro_name()
     FILE *fp = fopen("/etc/os-release", "r");
     char *line = NULL;
     size_t len = 0;
-    ssize_t read;
     //return the value of the line that starts with NAME=, this is used because in debian based linux
     //the os-release file is different
-    while ((read = getline(&line, &len, fp)) != -1)
+    while ((getline(&line, &len, fp)) != -1)
     {
         if (strncmp(line, "NAME=", 5) == 0)
         {
@@ -57,8 +53,7 @@ char *get_uptime()
     FILE *fp = popen("uptime", "r");
     char *line = NULL;
     size_t len = 0;
-    ssize_t read;
-    while (read = getline(&line, &len, fp) != -1)
+    while (getline(&line, &len, fp) != -1)
     {
         //remove some useless data from the line
         strcpy(uptime, line+13);
@@ -135,8 +130,7 @@ char *get_cpu_name()
     FILE *cpuinfo = fopen("/proc/cpuinfo", "r");
     char *line = NULL;
     size_t len = 0;
-    ssize_t read;
-    while ((read = getline(&line, &len, cpuinfo)) != -1)
+    while ((getline(&line, &len, cpuinfo)) != -1)
     {
         if (strstr(line, "model name") != NULL)
         {
@@ -182,8 +176,7 @@ char *get_gpu_name()
     FILE *fp = popen("lspci | grep VGA", "r");
     char *line = NULL;
     size_t len = 0;
-    ssize_t read;
-    while ((read = getline(&line, &len, fp)) != -1)
+    while ((getline(&line, &len, fp)) != -1)
     {
         //skip some words
         strcpy(gpu_name, line+35);
@@ -200,8 +193,7 @@ char *get_ram_usage(){
     FILE *fp = popen("free -t | awk 'NR == 2 {printf(\"%.2f%%\"), $3/$2*100}'", "r");
     char *line = NULL;
     size_t len = 0;
-    ssize_t read;
-    while ((read = getline(&line, &len, fp)) != -1)
+    while ((getline(&line, &len, fp)) != -1)
     {
 
             strcpy(ram_usage, line);
@@ -223,8 +215,7 @@ char *get_host(){
     FILE *fp = popen("hostname", "r");
     char *line = NULL;
     size_t len = 0;
-    ssize_t read;
-    while ((read = getline(&line, &len, fp)) !=-1 )
+    while ((getline(&line, &len, fp)) != -1 )
     {
         strcpy(host, line);
     }
@@ -245,8 +236,7 @@ char *detect_res() {
         FILE *fp = popen("xrandr | grep '*' | uniq | awk '{print $1}'", "r");
         char *line = NULL;
         size_t len = 0;
-        ssize_t read;
-        while ((read = getline(&line, &len, fp)) != -1) {
+        while ((getline(&line, &len, fp)) != -1) {
             strcpy(res, line);
         }
         res[strcspn(res, "\r\n")] = 0;

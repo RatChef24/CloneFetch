@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/CloneFetch.dir/main.c.o CMakeFiles/CloneFetch.dir/fetch.c.o CMakeFiles/CloneFetch.dir/logos.c.o CMakeFiles/CloneFetch.dir/display.c.o -o CloneFetch 

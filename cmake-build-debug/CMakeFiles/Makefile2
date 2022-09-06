@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/ratchef/Documenti/GitHub/CloneFetch/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/untitled.dir/all
+all: CMakeFiles/CloneFetch.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/untitled.dir/clean
+clean: CMakeFiles/CloneFetch.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/untitled.dir
+# Target rules for target CMakeFiles/CloneFetch.dir
 
 # All Build rule for target.
-CMakeFiles/untitled.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ratchef/Documenti/GitHub/CloneFetch/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target untitled"
-.PHONY : CMakeFiles/untitled.dir/all
+CMakeFiles/CloneFetch.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ratchef/Documenti/GitHub/CloneFetch/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target CloneFetch"
+.PHONY : CMakeFiles/CloneFetch.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/untitled.dir/rule: cmake_check_build_system
+CMakeFiles/CloneFetch.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ratchef/Documenti/GitHub/CloneFetch/cmake-build-debug/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/untitled.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CloneFetch.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ratchef/Documenti/GitHub/CloneFetch/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/untitled.dir/rule
+.PHONY : CMakeFiles/CloneFetch.dir/rule
 
 # Convenience name for target.
-untitled: CMakeFiles/untitled.dir/rule
-.PHONY : untitled
+CloneFetch: CMakeFiles/CloneFetch.dir/rule
+.PHONY : CloneFetch
 
 # clean rule for target.
-CMakeFiles/untitled.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/clean
-.PHONY : CMakeFiles/untitled.dir/clean
+CMakeFiles/CloneFetch.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CloneFetch.dir/build.make CMakeFiles/CloneFetch.dir/clean
+.PHONY : CMakeFiles/CloneFetch.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
