@@ -9,6 +9,8 @@
 #include "sys/statvfs.h">
 #include <sys/stat.h>
 #include <errno.h>
+#include <sys/types.h>
+#include <signal.h>
 
 
 
@@ -233,24 +235,24 @@ char *get_host(){
 
 //detect_res
 //detects the combined resolution of all the monitors and returns it as a string
-char *detect_res(){
-    char *res = (char *)malloc(sizeof(char) * 100);
+char *detect_res() {
+    char *res = (char *) malloc(sizeof(char) * 100);
     struct stat sts;
-    if (!stat("proc/xrandr", &sts) == -1 && errno == ENOENT){
-        printf("xrandr not installed");
+    //check if the process xrandr exists in the system
+    if (stat("/usr/bin/xrandr", &sts) == -1 && stat("/bin/xrandr", &sts) == -1) {
+        strcpy(res, "xrandr not installed");
     } else {
-        FILE *fp = popen("xrandr | grep '*' | awk '{print $1}'", "r");
+        FILE *fp = popen("xrandr | grep '*' | uniq | awk '{print $1}'", "r");
         char *line = NULL;
         size_t len = 0;
         ssize_t read;
-        while ((read = getline(&line, &len, fp)) !=-1 )
-        {
+        while ((read = getline(&line, &len, fp)) != -1) {
             strcpy(res, line);
         }
         res[strcspn(res, "\r\n")] = 0;
         pclose(fp);
+
+        return res;
     }
 
-    return res;
-    }
-
+}
